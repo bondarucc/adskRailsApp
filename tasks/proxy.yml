@@ -1,0 +1,25 @@
+---
+- yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    state: present
+- name: install nginx
+  yum:
+    name: nginx
+- name: copy nginx.conf to /etc/nginx/conf.d
+  template:
+    src: /Users/serz/rails-prjcts/CarRental/conf/nginx.conf
+    dest: /etc/nginx/conf.d
+- name: certbot install
+  yum:
+    name: python2-certbot-nginx
+#- name: certbot configuration
+#  command: certbot -i nginx -n -d "yourzaj.tk" --nginx -m "jakisemail@gmail.com" --agree-tos --redirect
+#- name: certbot configuration
+#  expect:
+#    command: certbot -i nginx -d "yourzaj.tk" --nginx -m "jakisemail@gmail.com" --agree-tos --redirect
+#    responses:
+#      '\(Y\)es/\(N\)o:': 'n'
+- name: nginx restarted
+  service:
+    name: nginx
+    state: restarted

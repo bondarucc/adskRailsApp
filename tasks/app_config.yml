@@ -1,0 +1,26 @@
+---
+- name: copy app.zip to server
+  copy:
+    src: /Users/serz/rails-prjcts/testApp.zip
+    dest: /home/ec2-user
+    mode: 0700
+- name: Extract app
+  unarchive:
+    src: /home/ec2-user/testApp.zip
+    dest: /home/ec2-user
+    remote_src: yes
+- name: install dependencies via bundler
+  bundler:
+    chdir: /home/ec2-user/testApp
+    executable: /usr/local/bin/bundle
+- name: aaa
+  command: chown -R ec2-user /home/ec2-user/testApp
+- name: copy myapp.service to /etc/systemd/system
+  template:
+    src: /Users/serz/rails-prjcts/CarRental/myapp.service
+    dest: /etc/systemd/system
+- name: autorun server
+  systemd:
+    state: started
+    unit: myapp.service
+    enabled: yes

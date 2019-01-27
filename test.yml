@@ -1,0 +1,16 @@
+---
+#- hosts: rails_app
+#  become: yes
+#  roles:
+#    - geerlingguy.ruby
+#  tasks:
+#    - name: install dependencies
+#      include_tasks: tasks/ROR_OS_deps.yml
+#    - name: deploy app
+#      include_tasks: tasks/app_config.yml
+
+- hosts: proxy_server
+  become: yes
+  tasks:
+    - name: configure proxy server
+      include_tasks: tasks/proxy.yml

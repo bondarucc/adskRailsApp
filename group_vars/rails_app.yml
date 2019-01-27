@@ -1,0 +1,26 @@
+---
+telegraf_url: https://dl.influxdata.com/telegraf/releases/telegraf-1.8.3-1.x86_64.rpm
+ruby_install_from_source: true
+ruby_version: 2.5.1
+ruby_install_gems:
+  - rails
+os_dep:
+  - git-core
+  - zlib
+  - zlib-devel
+  - gcc-c++
+  - patch
+  - readline
+  - readline-devel
+  - libyaml-devel
+  - libffi-devel
+  - openssl-devel
+  - make
+  - bzip2
+  - autoconf
+  - automake
+  - libtool
+  - bison
+  - curl
+  - sqlite-devel
+  - nodejs
