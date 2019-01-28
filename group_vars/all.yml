@@ -1,8 +1,8 @@
 ---
-metrics_storage_ip: 3.120.116.7
-metrics_storage_ip_private: 172.31.16.60
-rails_app_1_ip: 35.158.72.102
-rails_app_1_ip_private: 172.31.30.52
-rails_app_2_ip:
-rails_app_2_ip_private:
-proxy_server_ip: 52.57.162.137
+metrics_storage_ip: 35.156.78.51
+metrics_storage_ip_private: 172.31.21.218
+rails_app_1_ip: 18.184.6.87
+rails_app_1_ip_private: 172.31.16.224
+rails_app_2_ip: 3.122.254.19
+rails_app_2_ip_private: 172.31.20.182
+proxy_server_ip: 52.28.199.173

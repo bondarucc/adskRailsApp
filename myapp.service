@@ -8,7 +8,6 @@ User=ec2-user
 WorkingDirectory=/home/ec2-user/testApp
 ExecStart=/usr/bin/bash -lc 'bundle exec rails server -b {{rails_app_1_ip_private}}'
 TimeoutSec=30
-RestartSec=15s
 Restart=always
 
 [Install]

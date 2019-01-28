@@ -8,16 +8,16 @@
     path: /etc/grafana/grafana.ini
     regexp: ';http_port = 3000'
     replace: 'http_port = 8080'
+- name: Grafana autoconfig
+  grafana_datasource:
+    name: "source_name"
+    grafana_url: "http://127.0.0.1:8080"
+    grafana_user: "admin"
+    grafana_password: "admin"
+    org_id: "1"
+    ds_type: "influxdb"
+    url: "http://127.0.0.1:8086"
+    database: "metrics"
 - service:
     name: grafana-server
     state: restarted
-- name: Grafana autoconfig
-    grafana_datasource:
-      name: "source_name"
-      grafana_url: "http://127.0.0.1:8080"
-      grafana_user: "admin"
-      grafana_password: "admin"
-      org_id: "1"
-      ds_type: "influxdb"
-      url: "http://35.157.104.79:8086"
-      database: "metrics"
